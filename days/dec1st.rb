@@ -1,4 +1,4 @@
-require_relative './util'
+require_relative '../util'
 
 arr = read_as_nums!("dec1st.txt")
 
