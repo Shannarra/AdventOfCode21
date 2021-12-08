@@ -1,9 +1,11 @@
-DEF_FOLDR = "../inputs"
+# frozen_string_literal: true
+
+DEF_FOLDR = '../inputs'
 
 def read_file(file, foldr = DEF_FOLDR)
-  open("#{foldr}/#{file}")
-    .readlines
-    .map(&:chomp)
+  File.open("#{foldr}/#{file}")
+      .readlines
+      .map(&:chomp)
 end
 
 def read_as_nums!(file, foldr = DEF_FOLDR)
@@ -26,9 +28,9 @@ def read_as_hash!(file, foldr = DEF_FOLDR)
 end
 
 def read_as_num_hash!(file, foldr = DEF_FOLDR)
-  read_as_hash!(file, foldr){|x| x.to_i}
+  read_as_hash!(file, foldr, &:to_i)
 end
 
 def read_as_arr_hash!(file, foldr = DEF_FOLDR)
-  read_as_hash!(file, foldr){|x| x[1]}
+  read_as_hash!(file, foldr) { |x| x[1] }
 end

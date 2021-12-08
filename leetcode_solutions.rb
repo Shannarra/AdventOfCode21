@@ -1,6 +1,6 @@
+# frozen_string_literal: true
 # -------------------------------------------------
 # https://leetcode.com/problems/median-of-two-sorted-arrays/
-
 
 # @param {Integer[]} nums1
 # @param {Integer[]} nums2
@@ -22,7 +22,6 @@
 # puts find_median_sorted_arrays([1,2], [3,4])
 # puts find_median_sorted_arrays([2],[])
 
-
 # @param {String} s
 # @param {String} p
 # @return {Boolean}
@@ -32,15 +31,12 @@
 
 # puts is_match("aa", 'a')                    # f
 # puts is_match("aa", 'aa')                   # t
-# puts is_match("aa", 'a*')                   # t 
+# puts is_match("aa", 'a*')                   # t
 # puts is_match("aklhfja", '.*')              # t
 # puts is_match("aab", 'c*a*b')               # t
 # puts is_match("mississippi","mis*is*p*.")   # f
 
 # puts is_match("aa", "a*")
-
-
-
 
 # --------------------------------------------
 # https://leetcode.com/problems/merge-k-sorted-lists/
@@ -57,7 +53,7 @@
 # # @return {ListNode}
 # def merge_k_lists(lists)
 #   return [] if lists.length == 0
- 
+
 #   flat = []
 #   lists.each {|l| while l; flat << l; l = l.next; end }
 
@@ -82,15 +78,13 @@
 
 # while list
 #   print "#{list.val} -> "
-#   list = list.next  
+#   list = list.next
 # end
 
 #  puts "#{merge_k_lists([[]])}"
 
-
 # ------------------------------------------
 # https://leetcode.com/problems/reverse-nodes-in-k-group/submissions/
-
 
 # Definition for singly-linked list.
 # class ListNode
@@ -152,34 +146,31 @@
 #   node = node.next
 # end
 
-
 # -------------------------------------------
 # https://leetcode.com/problems/substring-with-concatenation-of-all-words/
-=begin
-
-def find_substring(s, words)
-  return [] if words.count == 0 || s.length < words.join.length
-  words_hash = {}
-  w_len = words[0].length
-  for i in (0..(s.length - w_len + 1))
-    w = s[i..(i + w_len)]
-    if words.uniq.include?(w)
-      words_hash[i] = w
-    end
-  end
-
-  windows = {}
-  words_hash.each {|k,v| windows[i%w_len].push(v)}
-
-  words_hash
-end
-
-puts "#{find_substring("foobarfoobar", %w{foo bar})}"                           # [0,3,6]
+#
+# def find_substring(s, words)
+#   return [] if words.count == 0 || s.length < words.join.length
+#   words_hash = {}
+#   w_len = words[0].length
+#   for i in (0..(s.length - w_len + 1))
+#     w = s[i..(i + w_len)]
+#     if words.uniq.include?(w)
+#       words_hash[i] = w
+#     end
+#   end
+#
+#   windows = {}
+#   words_hash.each {|k,v| windows[i%w_len].push(v)}
+#
+#   words_hash
+# end
+#
+# puts "#{find_substring("foobarfoobar", %w{foo bar})}"                           # [0,3,6]
 # puts "#{find_substring("barfoothefoobarman", %w{foo bar})}"                     # [0,9] || [9,0]
 # puts "#{find_substring("wordgoodgoodgoodbestword", %w{word good best word})}"   # []
 # puts "#{find_substring("barfoofoobarthefoobarman", %w{bar foo the})}"           # [6,9,12]
 # puts "#{find_substring("wordgoodgoodgoodbestword", %w{ word good best good})}"  # [8]
-puts "#{find_substring("pjzkrkevzztxductzzxmxsvwjkxpvukmfjywwetvfnujhweiybwvvsrfequzkhossmootkmyxgjgfordrpapjuunmqnxxdrqrfgkrsjqbszgiqlcfnrpjlcwdrvbumtotzylshdvccdmsqoadfrpsvnwpizlwszrtyclhgilklydbmfhuywotjmktnwrfvizvnmfvvqfiokkdprznnnjycttprkxpuykhmpchiksyucbmtabiqkisgbhxngmhezrrqvayfsxauampdpxtafniiwfvdufhtwajrbkxtjzqjnfocdhekumttuqwovfjrgulhekcpjszyynadxhnttgmnxkduqmmyhzfnjhducesctufqbumxbamalqudeibljgbspeotkgvddcwgxidaiqcvgwykhbysjzlzfbupkqunuqtraxrlptivshhbihtsigtpipguhbhctcvubnhqipncyxfjebdnjyetnlnvmuxhzsdahkrscewabejifmxombiamxvauuitoltyymsarqcuuoezcbqpdaprxmsrickwpgwpsoplhugbikbkotzrtqkscekkgwjycfnvwfgdzogjzjvpcvixnsqsxacfwndzvrwrycwxrcismdhqapoojegggkocyrdtkzmiekhxoppctytvphjynrhtcvxcobxbcjjivtfjiwmduhzjokkbctweqtigwfhzorjlkpuuliaipbtfldinyetoybvugevwvhhhweejogrghllsouipabfafcxnhukcbtmxzshoyyufjhzadhrelweszbfgwpkzlwxkogyogutscvuhcllphshivnoteztpxsaoaacgxyaztuixhunrowzljqfqrahosheukhahhbiaxqzfmmwcjxountkevsvpbzjnilwpoermxrtlfroqoclexxisrdhvfsindffslyekrzwzqkpeocilatftymodgztjgybtyheqgcpwogdcjlnlesefgvimwbxcbzvaibspdjnrpqtyeilkcspknyylbwndvkffmzuriilxagyerjptbgeqgebiaqnvdubrtxibhvakcyotkfonmseszhczapxdlauexehhaireihxsplgdgmxfvaevrbadbwjbdrkfbbjjkgcztkcbwagtcnrtqryuqixtzhaakjlurnumzyovawrcjiwabuwretmdamfkxrgqgcdgbrdbnugzecbgyxxdqmisaqcyjkqrntxqmdrczxbebemcblftxplafnyoxqimkhcykwamvdsxjezkpgdpvopddptdfbprjustquhlazkjfluxrzopqdstulybnqvyknrchbphcarknnhhovweaqawdyxsqsqahkepluypwrzjegqtdoxfgzdkydeoxvrfhxusrujnmjzqrrlxglcmkiykldbiasnhrjbjekystzilrwkzhontwmehrfsrzfaqrbbxncphbzuuxeteshyrveamjsfiaharkcqxefghgceeixkdgkuboupxnwhnfigpkwnqdvzlydpidcljmflbccarbiegsmweklwngvygbqpescpeichmfidgsjmkvkofvkuehsmkkbocgejoiqcnafvuokelwuqsgkyoekaroptuvekfvmtxtqshcwsztkrzwrpabqrrhnlerxjojemcxel",["dhvf","sind","ffsl","yekr","zwzq","kpeo","cila","tfty","modg","ztjg","ybty","heqg","cpwo","gdcj","lnle","sefg","vimw","bxcb"])}"
-
-=end
-
+# rubocop:disable Layout/LineLength
+# puts "#{find_substring("pjzkrkevzztxductzzxmxsvwjkxpvukmfjywwetvfnujhweiybwvvsrfequzkhossmootkmyxgjgfordrpapjuunmqnxxdrqrfgkrsjqbszgiqlcfnrpjlcwdrvbumtotzylshdvccdmsqoadfrpsvnwpizlwszrtyclhgilklydbmfhuywotjmktnwrfvizvnmfvvqfiokkdprznnnjycttprkxpuykhmpchiksyucbmtabiqkisgbhxngmhezrrqvayfsxauampdpxtafniiwfvdufhtwajrbkxtjzqjnfocdhekumttuqwovfjrgulhekcpjszyynadxhnttgmnxkduqmmyhzfnjhducesctufqbumxbamalqudeibljgbspeotkgvddcwgxidaiqcvgwykhbysjzlzfbupkqunuqtraxrlptivshhbihtsigtpipguhbhctcvubnhqipncyxfjebdnjyetnlnvmuxhzsdahkrscewabejifmxombiamxvauuitoltyymsarqcuuoezcbqpdaprxmsrickwpgwpsoplhugbikbkotzrtqkscekkgwjycfnvwfgdzogjzjvpcvixnsqsxacfwndzvrwrycwxrcismdhqapoojegggkocyrdtkzmiekhxoppctytvphjynrhtcvxcobxbcjjivtfjiwmduhzjokkbctweqtigwfhzorjlkpuuliaipbtfldinyetoybvugevwvhhhweejogrghllsouipabfafcxnhukcbtmxzshoyyufjhzadhrelweszbfgwpkzlwxkogyogutscvuhcllphshivnoteztpxsaoaacgxyaztuixhunrowzljqfqrahosheukhahhbiaxqzfmmwcjxountkevsvpbzjnilwpoermxrtlfroqoclexxisrdhvfsindffslyekrzwzqkpeocilatftymodgztjgybtyheqgcpwogdcjlnlesefgvimwbxcbzvaibspdjnrpqtyeilkcspknyylbwndvkffmzuriilxagyerjptbgeqgebiaqnvdubrtxibhvakcyotkfonmseszhczapxdlauexehhaireihxsplgdgmxfvaevrbadbwjbdrkfbbjjkgcztkcbwagtcnrtqryuqixtzhaakjlurnumzyovawrcjiwabuwretmdamfkxrgqgcdgbrdbnugzecbgyxxdqmisaqcyjkqrntxqmdrczxbebemcblftxplafnyoxqimkhcykwamvdsxjezkpgdpvopddptdfbprjustquhlazkjfluxrzopqdstulybnqvyknrchbphcarknnhhovweaqawdyxsqsqahkepluypwrzjegqtdoxfgzdkydeoxvrfhxusrujnmjzqrrlxglcmkiykldbiasnhrjbjekystzilrwkzhontwmehrfsrzfaqrbbxncphbzuuxeteshyrveamjsfiaharkcqxefghgceeixkdgkuboupxnwhnfigpkwnqdvzlydpidcljmflbccarbiegsmweklwngvygbqpescpeichmfidgsjmkvkofvkuehsmkkbocgejoiqcnafvuokelwuqsgkyoekaroptuvekfvmtxtqshcwsztkrzwrpabqrrhnlerxjojemcxel",["dhvf","sind","ffsl","yekr","zwzq","kpeo","cila","tfty","modg","ztjg","ybty","heqg","cpwo","gdcj","lnle","sefg","vimw","bxcb"])}"
+# rubocop:enable Layout/LineLength
